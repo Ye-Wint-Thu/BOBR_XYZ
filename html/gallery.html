@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOBR Gallery</title>
+
+    <!--Font Awesome link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--CSS Link-->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!--Nav Bar Start-->
+    <section class="navbar">
+        <div class="nav-left" id="navLinks">
+            <a href="#" class="logo">
+                <h2>BOBR</h2>
+            </a>
+            <a class="nav-links" href="index.html">Home</a></li>
+            <a class="nav-links active" href="gallery.html">Gallery</a></li>
+            <a class="nav-links" href="create.html">Create</a></li>
+            <a class="nav-links" href="team.html">Team</a></li>
+        </div>
+        <div class="nav-right" id="navLinks">
+            <i class="fa-brands fa-discord"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <div class="theme-toggle">
+                <div class="themes" id="themes">
+                    <i class="fa-solid fa-cloud-moon" id="dark-mode"></i>
+                    <i class="fa-solid fa-cloud-sun" id="light-mode"></i>
+                </div>
+            </div>
+            <div class="nav-show-hide">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </div>
+        </div>
+    </section>
+    <!--Nav Bar End-->
+
+</body>
+<script src="../js/script.js"></script>
+</html>

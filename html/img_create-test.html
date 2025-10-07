@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Layer-Based NFT Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #preview {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 20px auto;
+            border: 2px solid #ccc;
+            background: #f9f9f9;
+        }
+
+        #preview img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .layer-select {
+            margin: 10px 0;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>NFT Layer Image Generator</h1>
+    <div id="preview">
+        <img id="Background" />
+        <img id="BOBR" />
+        <img id="Outfit" />
+        <img id="Accessory" />
+        <img id="Eyewear" />
+        <img id="Headwear" />
+        <img id="Moanimals" />
+    </div>
+
+    <!-- Dropdowns for each layer -->
+    <div class="layer-select">
+        <label>Background:
+            <select onchange="updateLayer('Background', this.value)">
+                <option value="">None</option>
+                <option value="Background/Green_background.png">Background 1</option>
+                <option value="Background/Karma_background.png">Background 2</option>
+            </select>
+        </label>
+    </div>
+    <div class="layer-select">
+        <label>BOBR:
+            <select onchange="updateLayer('BOBR', this.value)">
+                <option value="">None</option>
+                <option value="Bobr/Angry_Bobr.png">BOBR 1</option>
+                <option value="Bobr/Demon_Bobr.png">BOBR 2</option>
+            </select>
+        </label>
+    </div>
+    <div class="layer-select">
+        <label>Outfit:
+            <select onchange="updateLayer('Outfit', this.value)">
+                <option value="">None</option>
+                <option value="Outfit/BOBR_outfit_1.png">Outfit 1</option>
+                <option value="Outfit/BOBR_outfit_2.png">Outfit 2</option>
+            </select>
+        </label>
+    </div>
+    <div class="layer-select">
+        <label>Accessory:
+            <select onchange="updateLayer('Accessory', this.value)">
+                <option value="">None</option>
+                <option value="Accessory/Brody_accessory.png">Accessory 1</option>
+                <option value="Accessory/Brody_sword.png">Accessory 2</option>
+            </select>
+        </label>
+    </div>
+    <div class="layer-select">
+        <label>Eyewear:
+            <select onchange="updateLayer('Eyewear', this.value)">
+                <option value="">None</option>
+                <option value="Eyewear/ChocoBear_eyewear.png">Eyewear 1</option>
+                <option value="Eyewear/Koza_eyewear.png">Eyewear 2</option>
+            </select>
+        </label>
+    </div>
+    <div class="layer-select">
+        <label>Headwear:
+            <select onchange="updateLayer('Headwear', this.value)">
+                <option value="">None</option>
+                <option value="Headwear/Blue_cap.png">Headwear 1</option>
+                <option value="Headwear/Blue_hair.png">Headwear 2</option>
+            </select>
+        </label>
+    </div>
+    <div class="layer-select">
+        <label>Moanimals:
+            <select onchange="updateLayer('Moanimals', this.value)">
+                <option value="">None</option>
+                <option value="Moanimal/Chog.png">Moanimal 1</option>
+                <option value="Moanimal/Molandak.png">Moanimal 2</option>
+            </select>
+        </label>
+    </div>
+
+    <!-- Buttons for output -->
+    <button onclick="downloadImage()">Download Image</button>
+    <button onclick="copyImage()">Copy Image</button>
+
+    <!-- Hidden canvas -->
+    <canvas id="canvas" width="400" height="400" style="display:none;"></canvas>
+
+    <script>
+        function updateLayer(layerId, filename) {
+            const img = document.getElementById(layerId);
+            img.src = filename ? "../img/" + filename : "";
+
+            console.log(`Layer ${layerId} updated to ${filename}`);
+        }
+
+        // Merge layers into one canvas
+        function mergeLayers() {
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+
+            // Base resolution (use Background natural size or fallback)
+            const baseImg = document.getElementById("Background");
+            const width = baseImg.naturalWidth || 1000;
+            const height = baseImg.naturalHeight || 1000;
+
+            // Resize canvas to match the resolution
+            canvas.width = width;
+            canvas.height = height;
+
+            ctx.clearRect(0, 0, width, height);
+
+            const layers = ["Background", "BOBR", "Outfit", "Accessory", "Eyewear", "Headwear", "Moanimals"];
+            return Promise.all(layers.map(id => {
+                return new Promise(resolve => {
+                    const img = document.getElementById(id);
+                    if (img.src && img.complete) {
+                        // Always stretch to full canvas
+                        ctx.drawImage(img, 0, 0, width, height);
+                    }
+                    resolve();
+                });
+            })).then(() => canvas);
+        }
+
+
+
+        // Download as PNG
+        function downloadImage() {
+            mergeLayers().then(canvas => {
+                const link = document.createElement("a");
+                link.download = "nft-image.png";
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+            });
+        }
+
+        // Copy to clipboard
+        async function copyImage() {
+            mergeLayers().then(async canvas => {
+                canvas.toBlob(async blob => {
+                    try {
+                        await navigator.clipboard.write([
+                            new ClipboardItem({ "image/png": blob })
+                        ]);
+                        alert("Image copied to clipboard!");
+                    } catch (err) {
+                        alert("Failed to copy: " + err);
+                    }
+                });
+            });
+        }
+    </script>
+
+</body>
+
+</html>
