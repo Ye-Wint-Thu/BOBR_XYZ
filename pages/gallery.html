@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOBR NFT</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/partials/navbar.css">
+    <link rel="stylesheet" href="../css/partials/footer.css">
+    <link rel="stylesheet" href="../css/pages/gallery.css">
+</head>
+
+<body>
+    <!--Navbar Start-->
+    <section class="navbar original">
+        <div class="nav-left">
+            <a href="../index.html" class="logo">
+                <h2>BOBR</h2>
+            </a>
+        </div>
+
+        <div class="nav-menu">
+            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link active" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="create.html">Create</a>
+            <a class="nav-link" href="team.html">Team</a>
+        </div>
+
+        <div class="nav-right">
+            <a href="https://x.com/Bober_xyz" target="_blank" aria-label="X (Twitter)">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://discord.gg/bobr" target="_blank" aria-label="Discord">
+                <i class="fa-brands fa-discord"></i>
+            </a>
+
+            <div class="theme-toggle">
+                <div class="themes">
+                    <i class="fa-solid fa-cloud-moon" id="dark-mode"></i>
+                    <i class="fa-solid fa-cloud-sun" id="light-mode"></i>
+                </div>
+            </div>
+            <div class="nav-show-hide">
+                <i class="fa fa-times" id="hide" onclick="hideMenu()"></i>
+                <i class="fa fa-bars" id="show" onclick="showMenu()"></i>
+            </div>
+        </div>
+    </section>
+
+    <!--Navbar End-->
+
+    <!--sidebar Start-->
+
+
+    <section class="navbar sidebar">
+
+        <div class="nav-menu">
+            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link active" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="create.html">Create</a>
+            <a class="nav-link" href="team.html">Team</a>
+        </div>
+
+        <div class="nav-right">
+            <a href="https://x.com/Bober_xyz" target="_blank" aria-label="X (Twitter)">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://discord.gg/bobr" target="_blank" aria-label="Discord">
+                <i class="fa-brands fa-discord"></i>
+            </a>
+
+            <div class="theme-toggle">
+                <div class="themes">
+                    <i class="fa-solid fa-cloud-moon" id="dark-mode"></i>
+                    <i class="fa-solid fa-cloud-sun" id="light-mode"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--sidebar End-->
+
+    <main class="gallery-main">
+        <section class="page-head container">
+            <h1>Art Gallery</h1>
+        </section>
+
+        <div class="circle"></div>
+
+        <section class="pfp-panel" aria-labelledby="pfpHeading">
+            <h2 id="pfpHeading" class="panel-title">BOBR 1/1 PFPs</h2>
+            <br>
+            <br>
+            <br>
+            <div id="pfpGrid" class="pfp-grid" aria-live="polite"></div>
+
+            <div class="pager">
+                <button id="prevBtn" class="pager-btn" aria-label="Previous page"><i
+                        class="fa-solid fa-caret-left"></i></button>
+                <span id="pageIndicator" class="page-indicator">1/1</span>
+                <button id="nextBtn" class="pager-btn" aria-label="Next page"><i
+                        class="fa-solid fa-caret-right"></i></button>
+            </div>
+        </section>
+    </main>
+    <br><br><br>
+    <!--Footer Start-->
+    <footer>
+        <div class="footer-background">
+            <div class="footer-header">
+                <h2><span>BOBR</span> KURWA</h2>
+            </div>
+            <img src="../img/BOBR_Footer.png" alt="">
+        </div>
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-navigation">
+                    <h4>Navigation</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="gallery.html">Art Gallery</a>
+                    <a href="create.html">Create PFP</a>
+                    <a href="team.html">About Team</a>
+                </div>
+                <div class="footer-socials">
+                    <h4>Social</h4>
+                    <!-- Social links now clickable -->
+                    <a href="https://x.com/Bober_xyz" target="_blank" rel="noopener noreferrer" class="icon-bg twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://discord.gg/bobr" target="_blank" rel="noopener noreferrer" class="icon-bg discord">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer End-->
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+    <script src="../js/gallery.js"></script>
+</body>
+
+</html>

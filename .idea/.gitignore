@@ -1,0 +1,15 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Exception: keep shared project settings if needed
+!.idea/codeStyles/
+!.idea/runConfigurations/
+
+# OS files
+.DS_Store
+
+# Web / frontend stuff
+node_modules/
+dist/
+build/

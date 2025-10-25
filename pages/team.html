@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOBR NFT</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/partials/navbar.css">
+    <link rel="stylesheet" href="../css/partials/footer.css">
+    <link rel="stylesheet" href="../css/pages/team.css">
+</head>
+
+<body>
+    <!--Navbar Start-->
+    <section class="navbar original">
+        <div class="nav-left">
+            <a href="../index.html" class="logo">
+                <h2>BOBR</h2>
+            </a>
+        </div>
+
+        <div class="nav-menu">
+            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="create.html">Create</a>
+            <a class="nav-link active" href="team.html">Team</a>
+        </div>
+
+        <div class="nav-right">
+            <a href="https://x.com/Bober_xyz" target="_blank" aria-label="X (Twitter)">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://discord.gg/bobr" target="_blank" aria-label="Discord">
+                <i class="fa-brands fa-discord"></i>
+            </a>
+
+            <div class="theme-toggle">
+                <div class="themes">
+                    <i class="fa-solid fa-cloud-moon" id="dark-mode"></i>
+                    <i class="fa-solid fa-cloud-sun" id="light-mode"></i>
+                </div>
+            </div>
+            <div class="nav-show-hide">
+                <i class="fa fa-times" id="hide" onclick="hideMenu()"></i>
+                <i class="fa fa-bars" id="show" onclick="showMenu()"></i>
+            </div>
+        </div>
+    </section>
+
+    <!--Navbar End-->
+
+    <!--sidebar Start-->
+
+
+    <section class="navbar sidebar">
+
+        <div class="nav-menu">
+            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="create.html">Create</a>
+            <a class="nav-link active" href="team.html">Team</a>
+        </div>
+
+        <div class="nav-right">
+            <a href="https://x.com/Bober_xyz" target="_blank" aria-label="X (Twitter)">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://discord.gg/bobr" target="_blank" aria-label="Discord">
+                <i class="fa-brands fa-discord"></i>
+            </a>
+
+            <div class="theme-toggle">
+                <div class="themes">
+                    <i class="fa-solid fa-cloud-moon" id="dark-mode"></i>
+                    <i class="fa-solid fa-cloud-sun" id="light-mode"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--sidebar End-->
+
+    <main class="container">
+
+        <!-- ================= Founders ================= -->
+        <section class="team-section" id="founders">
+            <h2 class="section-title">BOBR Founders</h2>
+
+            <div class="members two">
+                <!-- Founder 1 -->
+                <article class="member">
+                    <figure class="avatar">
+                        <img src="../img/Team/Leys%20BOBR%20(1).png" alt="Leys portrait">
+                    </figure>
+                    <div class="content">
+                        <h3>Leys <span class="role">(CEO)</span></h3>
+                        <p class="bio">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Founder 2 -->
+                <article class="member">
+                    <figure class="avatar">
+                        <img src="../img/Team/Koza%20BOBR.png" alt="Koza portrait">
+                    </figure>
+                    <div class="content">
+                        <h3>Koza <span class="role">(CEO)</span></h3>
+                        <p class="bio">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="divider" aria-hidden="true"></div>
+        </section>
+
+        <!-- ================= Art Team ================= -->
+        <section class="team-section" id="art-team">
+            <h2 class="section-title">BOBR Art Team</h2>
+
+            <div class="members two">
+                <!-- Artist 1 -->
+                <article class="member">
+                    <figure class="avatar">
+                        <img src="../img/Team/Vinni%20BOBR%20(1).png" alt="Vinni portrait">
+                    </figure>
+                    <div class="content">
+                        <h3>Vinni <span class="role">(2D Artist)</span></h3>
+                        <p class="bio">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Artist 2 -->
+                <article class="member">
+                    <figure class="avatar">
+                        <img src="../img/Team/3D%20Nad%20BOBR%20(1).png" alt="3D Nad portrait">
+                    </figure>
+                    <div class="content">
+                        <h3>3D Nad <span class="role">(3D Artist)</span></h3>
+                        <p class="bio">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="divider" aria-hidden="true"></div>
+        </section>
+
+        <!-- ================= Community Team ================= -->
+        <section class="team-section" id="community-team">
+            <h2 class="section-title">BOBR Community Team</h2>
+
+            <div class="members community">
+                <!-- leader row -->
+                <article class="member leader">
+                    <figure class="avatar">
+                        <img src="../img/Team/Sillvuk%20BOBR%20(1).png" alt="Sillvuk portrait">
+                    </figure>
+                    <div class="title">Sillvuk</div>
+                    <div class="subtitle">Community Lead</div>
+                </article>
+
+                <!-- second row -->
+                <article class="member c-left">
+                    <figure class="avatar">
+                        <img src="../img/Team/Pita%20BOBR.png" alt="Pitazenko portrait">
+                    </figure>
+                    <div class="title">Pitazenko</div>
+                    <div class="subtitle">Community Team</div>
+                </article>
+
+                <article class="member c-right">
+                    <figure class="avatar">
+                        <img src="../img/Team/Enny%20BOBR%20(1).png" alt="Enny portrait">
+                    </figure>
+                    <div class="title">Enny</div>
+                    <div class="subtitle">Community Team</div>
+                </article>
+
+                <!-- third row -->
+                <article class="member c-b1">
+                    <figure class="avatar">
+                        <img src="../img/Team/Torzykk%20BOBR.png" alt="Torzyk portrait">
+                    </figure>
+                    <div class="title">Torzyk</div>
+                    <div class="subtitle">Community Team</div>
+                </article>
+
+                <article class="member c-b2">
+                    <figure class="avatar">
+                        <img src="../img/Team/Demon%20BOBR%20(1).png" alt="Demonik portrait">
+                    </figure>
+                    <div class="title">Demonik</div>
+                    <div class="subtitle">Community Team</div>
+                </article>
+
+                <article class="member c-b3">
+                    <figure class="avatar">
+                        <img src="../img/Team/Elijapapi%20BOBR%20(1).png" alt="Eljjapapi portrait">
+                    </figure>
+                    <div class="title">Eljjapapi</div>
+                    <div class="subtitle">Community Team</div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <!--Footer Start-->
+    <footer>
+        <div class="footer-background">
+            <div class="footer-header">
+                <h2><span>BOBR</span> KURWA</h2>
+            </div>
+            <img src="../img/BOBR_Footer.png" alt="">
+        </div>
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-navigation">
+                    <h4>Navigation</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="gallery.html">Art Gallery</a>
+                    <a href="create.html">Create PFP</a>
+                    <a href="team.html">About Team</a>
+                </div>
+                <div class="footer-socials">
+                    <h4>Social</h4>
+                    <!-- Social links now clickable -->
+                    <a href="https://x.com/Bober_xyz" target="_blank" rel="noopener noreferrer" class="icon-bg twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://discord.gg/bobr" target="_blank" rel="noopener noreferrer" class="icon-bg discord">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer End-->
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

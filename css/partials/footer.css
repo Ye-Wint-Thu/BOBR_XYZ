@@ -1,0 +1,215 @@
+footer {
+    width: 100%;
+    height: 600px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Purple oval background */
+.footer-background {
+    background-color: var(--primary-darken);
+    width: 1300px;
+    height: 980px;
+    position: absolute;
+    border-radius: 50%;
+    right: -420px;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.footer-background .footer-header {
+    margin-top: 3rem;
+    padding: 20px;
+    padding-right: 100px;
+}
+
+.footer-header h2 {
+    font-size: 3rem;
+    color: var(--neutral-color-white);
+    text-shadow: 7px 6px 5px rgba(0, 0, 0, 0.25);
+}
+
+.footer-header h2 span {
+    color: var(--primary-color);
+}
+
+.footer-background img {
+    margin-right: 80px;
+    width: 525px;
+    height: auto;
+    animation: footer-bobr-animate 2s linear infinite;
+}
+
+@keyframes footer-bobr-animate {
+    from {
+        transform: rotate(0deg) translateX(15px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(15px) rotate(-360deg);
+    }
+}
+
+/* Footer text/content area */
+.footer-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: 80px;
+    z-index: 1;
+    padding-top: 100px;
+    padding-right: 500px;
+}
+
+/* Keep all text colors black as before */
+.footer-content h3,
+.footer-links h4,
+.footer-navigation a {
+    color: var(--heading-text-color);
+}
+
+.footer-content h3 {
+    font-size: var(--font-size-3);
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 100px;
+}
+
+.footer-content .footer-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-links h4 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-navigation a {
+    font-weight: 600;
+    font-size: var(--font-size-5);
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-navigation a:hover {
+    color: var(--primary-color);
+}
+
+/* Social icons same */
+.footer-socials {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-socials .icon-bg {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    border: 3px solid transparent;
+}
+
+.footer-socials .twitter {
+    background-color: var(--heading-text-color);
+    color: var(--secondary-color);
+}
+
+.footer-socials .discord {
+    background-color: #D9D9D9;
+    color: #5662F6;
+}
+
+.icon-bg i {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.twitter:has(i:hover) {
+    background-color: var(--secondary-color);
+    color: var(--heading-text-color);
+    border: 3px solid var(--heading-text-color);
+}
+
+.discord:has(i:hover) {
+    background-color: #5662F6;
+    color: #D9D9D9;
+}
+
+@media (max-width: 1100px) {
+    footer .footer-socials h4{
+        color: #ffffff;
+    }
+}
+
+@media(max-width: 980px) {
+    
+    footer .footer-header h2,
+    footer .footer-links h4,
+    footer .footer-navigation a{
+        color: #ffffff;
+    }
+}
+
+/* MOBILE-ONLY FOOTER FIXES */
+@media (max-width: 768px) {
+    .footer-content h3,
+    .footer-links h4,
+    .footer-navigation a {
+        color: var(--neutral-color-white);
+    }
+
+    .footer-content{
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .footer-background img {
+        display: none;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer-socials {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+}
+
+/* Even smaller phones */
+@media (max-width: 480px) {
+    .footer-background img {
+        width: 260px;
+        margin-right: 20px;
+    }
+
+    .footer-links {
+        gap: 30px;
+    }
+}

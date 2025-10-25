@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+:root {
+    --primary-color: #8c52ff;
+    --primary-background: #ffffff;
+    --primary-darken: #37245e;
+    --secondary-color: #ffffff;
+    --accent-color: #febffd;
+    --neutral-color: #1e1e1e;
+    --neutral-color-white: #ffffff;
+    --heading-text-color: #1e1e1e;
+    --body-text-color: #444444;
+    --muted-text-color: #777777;
+    --linked-text-color: #8a4fff;
+    --primary-btn-hover: #6f3bcc;
+    --secondary-btn: #d46bec;
+    --disabled-btn-background: #cccccc;
+    --disabled-btn-text: #666666;
+    --font-size-1: calc(2.5rem + 1vw);
+    --font-size-2: calc(2rem + 0.5vw);
+    --font-size-3: calc(1.75rem + 0.25vw);
+    --font-size-4: calc(1.5rem + 0.1vw);
+    --font-size-5: calc(1.25rem + 0.05vw);
+    --font-size-6: calc(1rem + 0.025vw);
+    --font-weight-1: 900;
+    --font-weight-2: 800;
+    --font-weight-3: 700;
+    --font-weight-4: 600;
+    --font-weight-5: 500;
+    --font-weight-6: 400;
+    --box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.39);
+    --card-box-shadow: 0px 0px 18px 6px rgba(0, 0, 0, 0.25);
+    --border-radius-1: 8px;
+    --border-radius-2: 18px;
+    --border-radius-3: 28px;
+    --card-border-radius: 4px;
+}
+
+.dark-mode {
+    --primary-color: #8a4fff;
+    --primary-background: #0d0a14;
+    --secondary-color: #0d0a14;
+    --accent-color: #ea148d;
+    --heading-text-color: #ffffff;
+    --body-text-color: #eaeaea;
+    --muted-text-color: #999999;
+    --secondary-btn: #a0055d;
+    --disabled-btn-background: #333333;
+    --box-shadow: 0px 0px 20px rgba(90, 90, 90, 0.8);
+    --card-box-shadow: 0px 0px 15px rgba(90, 90, 90, 0.8);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--body-text-color);
+    transition: .3s all ease-in-out;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-text-color);
+}
+
+h1 {
+    font-size: var(--font-size-1);
+    font-weight: 900;
+}
+
+h2 {
+    font-size: var(--font-size-2);
+    font-weight: 800;
+}
+
+h3 {
+    font-size: var(--font-size-3);
+    font-weight: 700;
+}
+
+h4 {
+    font-size: var(--font-size-4);
+    font-weight: 600;
+}
+
+h5 {
+    font-size: var(--font-size-5);
+    font-weight: 500;
+}
+
+h6 {
+    font-size: var(--font-size-6);
+    font-weight: 400;
+}
+
+p {
+    font-size: var(--font-size-6);
+}
+
+a {
+    text-decoration: none;
+}
