@@ -4,11 +4,11 @@
 const defaultImages = {
     Background: "../img/Background/Green_background.png",
     BOBR: "../img/Bobr/Normal_Bobr.png",
-    Outfit: "",
-    Accessory: "",
-    Eyewear: "",
-    Headwear: "",
-    Moanimals: "",
+    Outfit: "../img/default_reset.png",
+    Accessory: "../img/default_reset.png",
+    Eyewear: "../img/default_reset.png",
+    Headwear: "../img/default_reset.png",
+    Moanimals: "../img/default_reset.png",
 };
 
 // Define category image data
@@ -146,6 +146,8 @@ const imageData = {
 
 // ------------------ DOM ELEMENTS ------------------
 
+let currentCategory = null;
+
 const categoryButtons = document.querySelectorAll(".category-button");
 const optionsContainer = document.getElementById("options");
 const preview = document.getElementById("preview");
@@ -166,11 +168,39 @@ function initializePreview() {
 }
 initializePreview();
 
-// ------------------ LOAD OPTIONS ------------------
+// ------------------ Load Options Function ------------------
 
 function loadOptions(category) {
-    optionsContainer.innerHTML = ""; // clear existing
+    currentCategory = category;
+    optionsContainer.innerHTML = ""; // clear previous content
 
+    // ------------------ Create Reset Button ------------------
+    const resetDiv = document.createElement("div");
+    resetDiv.classList.add("option-img"); // same structure as other options
+
+    const resetBtn = document.createElement("button");
+    resetBtn.classList.add("reset-layer-btn");
+    resetBtn.innerHTML = '<i class="fa-solid fa-ban"></i>';
+
+    // Add click event to reset that specific layer
+    resetBtn.addEventListener("click", () => {
+        const layer = document.getElementById(category);
+        if (layer) {
+            layer.src = defaultImages[category] || "";
+        }
+
+        // Remove selected highlight
+        optionsContainer.querySelectorAll("img").forEach(i => i.classList.remove("selected"));
+
+        showToast(`🔄 ${category} reset to default!`);
+    });
+
+    // Add the button into the .option-img div
+    resetDiv.appendChild(resetBtn);
+    // Append the reset option first
+    optionsContainer.appendChild(resetDiv);
+
+    // Dynamically load options
     imageData[category].forEach((src) => {
         const div = document.createElement("div");
         div.classList.add("option-img");
@@ -178,16 +208,11 @@ function loadOptions(category) {
         img.src = src;
 
         img.addEventListener("click", () => {
-            // update preview image layer
             const layer = document.getElementById(category);
-            if (layer) {
-                layer.src = src;
-            }
+            if (layer) layer.src = src;
 
-            // mark selected
-            optionsContainer
-                .querySelectorAll("img")
-                .forEach((i) => i.classList.remove("selected"));
+            // highlight selected
+            optionsContainer.querySelectorAll("img").forEach(i => i.classList.remove("selected"));
             img.classList.add("selected");
         });
 
@@ -195,8 +220,10 @@ function loadOptions(category) {
         optionsContainer.appendChild(div);
     });
 
-    updateScrollbar(); // update scrollbar size after loading
+    updateScrollbar();
 }
+
+
 
 // ------------------ CATEGORY SWITCH ------------------
 
@@ -346,6 +373,7 @@ resetBtn.addEventListener("click", () => {
     });
 
     optionsContainer.querySelectorAll("img").forEach((i) => i.classList.remove("selected"));
+    showToast("🔄 All layers reset to default!");
 });
 
 // ------------------ TOAST MESSAGE FUNCTION ------------------
