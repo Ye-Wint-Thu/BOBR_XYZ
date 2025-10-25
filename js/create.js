@@ -3,7 +3,7 @@
 // Default images for preview + reset
 const defaultImages = {
     Background: "../img/Background/Green_background.png",
-    BOBR: "../img/Bobr/Normal_Bobr.png",
+    BOBR: "../img/bobr/Normal_Bobr.png",
     Outfit: "",
     Accessory: "",
     Eyewear: "",
@@ -26,13 +26,12 @@ const imageData = {
         "../img/Background/Yellow_background.png",
     ],
     BOBR: [
-        "../img/Bobr/Normal_Bobr.png",
-        "../img/Bobr/Angry_Bobr.png",
-        "../img/Bobr/Goofy_Bobr.png",
-        "../img/Bobr/Happy_Bobr.png",
+        "../img/bobr/Normal_Bobr.png",
+        "../img/bobr/Angry_Bobr.png",
+        "../img/bobr/Goofy_Bobr.png",
+        "../img/bobr/Happy_Bobr.png",
         "../img/Bobr/Mafia_Bobr.png",
         "../img/Bobr/Sad_Bobr.png",
-        "../img/Bobr/Normal_Bobr.png",
         "../img/Bobr/Unimpressed_Bobr.png",
     ],
     Outfit: [
