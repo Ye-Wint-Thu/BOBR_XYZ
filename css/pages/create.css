@@ -354,3 +354,9 @@
     }
 
 }
+
+@media (max-width: 500px) {
+    .create-container {
+        padding: 10px;
+    }
+}
